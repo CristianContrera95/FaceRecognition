@@ -173,8 +173,8 @@ def count_humans():
 
         gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
 
-        #rectangles = body_upper.detectMultiScale(gray, 1.1, 4)
-        #rectangles = body_full.detectMultiScale(gray, 1.1, 4)
+        # rectangles = body_upper.detectMultiScale(gray, 1.1, 4)
+        # rectangles = body_full.detectMultiScale(gray, 1.1, 4)
         rectangles = body_lower.detectMultiScale(gray, 1.1, 4)
 
 #        rectangles = []
@@ -196,7 +196,7 @@ def count_humans():
             cv.rectangle(img, (x, y), (x+w, y+h), (0, 255, 0), 2)
             frames_buff_out.append(img)
             counter += 1
-            #print('Human detected: ', counter)
+            # print('Human detected: ', counter)
 
 
 def detect_faces():
@@ -237,10 +237,9 @@ def detect_faces():
             rectangles.append((x, y, w, h))
 
         for (x, y, w, h) in rectangles:
-            faces_detected.append(img) #[y:y+h, x:x+w,:]) # pasar solo la cara o toda la imagen?
+            faces_detected.append(img) # [y:y+h, x:x+w,:]) # pasar solo la cara o toda la imagen?
             cv.rectangle(img, (x, y), (x+w, y+h), (255, 0, 0), 2)
             frames_buff_out.append(img)
-
 
 
 def show_frames():
@@ -284,7 +283,7 @@ if __name__=='__main__':
 
     process = []
     functions = [film, detect_faces, show_frames, who_is, how_are, detect_gender_age]
-   # functions = [film, detect_faces, count_humans, show_frames, who_is, how_are, detect_gender_age]
+    # functions = [film, detect_faces, count_humans, show_frames, who_is, how_are, detect_gender_age]
 
     # Lanzamos cada funcion en un proceso porque si
     i = 0
